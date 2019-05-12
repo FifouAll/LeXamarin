@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LEPPE3"
+             x:Class="LEPPE3.MainPage">
+
+    <StackLayout VerticalOptions="FillAndExpand"
+                       HorizontalOptions="FillAndExpand"
+                       Orientation="Vertical"
+                       Spacing="2"
+                 BackgroundColor="CadetBlue">
+        <Label Text="Répertoire"
+            VerticalOptions="Start"
+            HorizontalOptions="Center"
+            FontSize="Large"
+            TextColor="Black"
+            Font="Bold,20"/>
+        <Label Text="Nom du participant :" />
+        <Entry x:Name="nomParticipant" Text="Aucun" Keyboard="Text" />
+        <Label Text="Prénom du participant :" />
+        <Entry x:Name="prenomParticipant" Text="Aucun" Keyboard="Text" />
+        <Label Text="Mot de passe du participant :" />
+        <Entry x:Name="pwdParticipant" Text="Aucun" Keyboard="Text" />
+        <!--<Button x:Name="boutonValider" Text="Ajouter"/>
+        <Label x:Name="confirmLabel" Text="" HorizontalTextAlignment="Center" />
+        <Label Text="Course Orientation" VerticalOptions="Start" HorizontalOptions="Center" FontSize="Large" TextColor="Black" Font="Bold,20"/>-->
+        <Button x:Name="AccesEquipe" Text="Inscription" Clicked="ButtonAccesEquipe"/>
+        <Button x:Name="Inscription" Text="Nouveau" Clicked="ButtonInscription"/>
+
+        <!-----<StackLayout Orientation="Horizontal">
+           <Label Text="Rechercher :" />
+           <Entry x:Name="recherche" Text="" Keyboard="Text" />
+        </StackLayout>------!>
+        <ListView x:Name="accesView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout BackgroundColor="#eee"
+                        Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Nom}"
+                                TextColor="#f35e20" />
+                                <Label Text="{Binding Prenom}"
+                                TextColor="#f35e20" />
+                                <Label Text="{Binding pwd}"
+                                HorizontalOptions="EndAndExpand"
+                                TextColor="#503026" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

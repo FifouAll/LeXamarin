@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IntroAXamarin.RepertoireListe">
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <Label Text="Trouvez votre contact dans la liste" />
+            <ListView x:Name="ContactView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout BackgroundColor="#eee"
+                        Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Nom}"
+                                TextColor="#f35e20" />
+                                    <Label Text="{Binding Numero}"
+                                HorizontalOptions="EndAndExpand"
+                                TextColor="#503026" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="boutonCarte" Text="Sur la carte" Clicked="OnButtonCarteClicked"/>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>
